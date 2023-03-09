@@ -10,6 +10,12 @@
 		28EFA57F29B9E62600526491 /* SiberSystemsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFA57E29B9E62600526491 /* SiberSystemsApp.swift */; };
 		28EFA58329B9E62700526491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EFA58229B9E62700526491 /* Assets.xcassets */; };
 		28EFA58629B9E62700526491 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EFA58529B9E62700526491 /* Preview Assets.xcassets */; };
+		28EFA59129B9F68F00526491 /* RectanglesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFA59029B9F68F00526491 /* RectanglesFactory.swift */; };
+		28EFA59329B9F69E00526491 /* RectanglesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFA59229B9F69E00526491 /* RectanglesViewModel.swift */; };
+		28EFA59529B9F6A800526491 /* RectanglesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFA59429B9F6A800526491 /* RectanglesView.swift */; };
+		28EFA59A29B9FF3D00526491 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFA59929B9FF3D00526491 /* RectangleView.swift */; };
+		28EFA59D29BA031C00526491 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFA59C29BA031C00526491 /* DataStore.swift */; };
+		28EFA59F29BA078A00526491 /* VMRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFA59E29BA078A00526491 /* VMRectangle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +23,12 @@
 		28EFA57E29B9E62600526491 /* SiberSystemsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiberSystemsApp.swift; sourceTree = "<group>"; };
 		28EFA58229B9E62700526491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28EFA58529B9E62700526491 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		28EFA59029B9F68F00526491 /* RectanglesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglesFactory.swift; sourceTree = "<group>"; };
+		28EFA59229B9F69E00526491 /* RectanglesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglesViewModel.swift; sourceTree = "<group>"; };
+		28EFA59429B9F6A800526491 /* RectanglesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglesView.swift; sourceTree = "<group>"; };
+		28EFA59929B9FF3D00526491 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
+		28EFA59C29BA031C00526491 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		28EFA59E29BA078A00526491 /* VMRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMRectangle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				28EFA58D29B9E67B00526491 /* AppDelegate */,
+				28EFA59B29BA030400526491 /* Core */,
 				28EFA58C29B9E64700526491 /* Modules */,
 				28EFA58E29B9E68D00526491 /* Provision */,
 			);
@@ -67,6 +80,7 @@
 		28EFA58C29B9E64700526491 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				28EFA58F29B9F67800526491 /* Rectangles */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -86,6 +100,50 @@
 				28EFA58429B9E62700526491 /* Preview Content */,
 			);
 			path = Provision;
+			sourceTree = "<group>";
+		};
+		28EFA58F29B9F67800526491 /* Rectangles */ = {
+			isa = PBXGroup;
+			children = (
+				28EFA59029B9F68F00526491 /* RectanglesFactory.swift */,
+				28EFA59729B9FEED00526491 /* Model */,
+				28EFA59629B9FEE500526491 /* View */,
+				28EFA59829B9FEF200526491 /* ViewModel */,
+			);
+			path = Rectangles;
+			sourceTree = "<group>";
+		};
+		28EFA59629B9FEE500526491 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				28EFA59429B9F6A800526491 /* RectanglesView.swift */,
+				28EFA59929B9FF3D00526491 /* RectangleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		28EFA59729B9FEED00526491 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		28EFA59829B9FEF200526491 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				28EFA59229B9F69E00526491 /* RectanglesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		28EFA59B29BA030400526491 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				28EFA59C29BA031C00526491 /* DataStore.swift */,
+				28EFA59E29BA078A00526491 /* VMRectangle.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +217,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				28EFA57F29B9E62600526491 /* SiberSystemsApp.swift in Sources */,
+				28EFA59F29BA078A00526491 /* VMRectangle.swift in Sources */,
+				28EFA59D29BA031C00526491 /* DataStore.swift in Sources */,
+				28EFA59129B9F68F00526491 /* RectanglesFactory.swift in Sources */,
+				28EFA59329B9F69E00526491 /* RectanglesViewModel.swift in Sources */,
+				28EFA59529B9F6A800526491 /* RectanglesView.swift in Sources */,
+				28EFA59A29B9FF3D00526491 /* RectangleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
