@@ -31,8 +31,8 @@ struct RectangleView: View {
                     Text("Y: \(Int(rectangle.offset.y))")
                 }
             }
-            Button("Edit") {
-               
+            NavigationLink("Edit") {
+                SaveRectangleFactory.create(context: rectangle)
             }
         }
     }

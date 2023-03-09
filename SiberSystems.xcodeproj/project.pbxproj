@@ -16,6 +16,12 @@
 		28EFA59A29B9FF3D00526491 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFA59929B9FF3D00526491 /* RectangleView.swift */; };
 		28EFA59D29BA031C00526491 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFA59C29BA031C00526491 /* DataStore.swift */; };
 		28EFA59F29BA078A00526491 /* VMRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFA59E29BA078A00526491 /* VMRectangle.swift */; };
+		28EFA5A229BA32FA00526491 /* AddRectangleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFA5A129BA32FA00526491 /* AddRectangleFactory.swift */; };
+		28EFA5A629BA331900526491 /* SaveRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFA5A529BA331900526491 /* SaveRectangleView.swift */; };
+		28EFA5A829BA332300526491 /* SaveRectangleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFA5A729BA332300526491 /* SaveRectangleViewModel.swift */; };
+		28EFA5AA29BA344F00526491 /* FeatureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFA5A929BA344F00526491 /* FeatureState.swift */; };
+		28EFA5AD29BA358D00526491 /* DataStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFA5AC29BA358D00526491 /* DataStoreError.swift */; };
+		28EFA5B029BA53EC00526491 /* RectangleCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFA5AF29BA53EC00526491 /* RectangleCoordinates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +35,12 @@
 		28EFA59929B9FF3D00526491 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
 		28EFA59C29BA031C00526491 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		28EFA59E29BA078A00526491 /* VMRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMRectangle.swift; sourceTree = "<group>"; };
+		28EFA5A129BA32FA00526491 /* AddRectangleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRectangleFactory.swift; sourceTree = "<group>"; };
+		28EFA5A529BA331900526491 /* SaveRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveRectangleView.swift; sourceTree = "<group>"; };
+		28EFA5A729BA332300526491 /* SaveRectangleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveRectangleViewModel.swift; sourceTree = "<group>"; };
+		28EFA5A929BA344F00526491 /* FeatureState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureState.swift; sourceTree = "<group>"; };
+		28EFA5AC29BA358D00526491 /* DataStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreError.swift; sourceTree = "<group>"; };
+		28EFA5AF29BA53EC00526491 /* RectangleCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCoordinates.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +92,7 @@
 		28EFA58C29B9E64700526491 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				28EFA5A029BA32CB00526491 /* SaveRectangle */,
 				28EFA58F29B9F67800526491 /* Rectangles */,
 			);
 			path = Modules;
@@ -140,10 +153,55 @@
 		28EFA59B29BA030400526491 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				28EFA59C29BA031C00526491 /* DataStore.swift */,
-				28EFA59E29BA078A00526491 /* VMRectangle.swift */,
+				28EFA5A929BA344F00526491 /* FeatureState.swift */,
+				28EFA5AB29BA357D00526491 /* DataStore */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		28EFA5A029BA32CB00526491 /* SaveRectangle */ = {
+			isa = PBXGroup;
+			children = (
+				28EFA5A129BA32FA00526491 /* AddRectangleFactory.swift */,
+				28EFA5AE29BA53E200526491 /* Model */,
+				28EFA5A329BA32FD00526491 /* View */,
+				28EFA5A429BA330300526491 /* ViewModel */,
+			);
+			path = SaveRectangle;
+			sourceTree = "<group>";
+		};
+		28EFA5A329BA32FD00526491 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				28EFA5A529BA331900526491 /* SaveRectangleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		28EFA5A429BA330300526491 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				28EFA5A729BA332300526491 /* SaveRectangleViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		28EFA5AB29BA357D00526491 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				28EFA59C29BA031C00526491 /* DataStore.swift */,
+				28EFA5AC29BA358D00526491 /* DataStoreError.swift */,
+				28EFA59E29BA078A00526491 /* VMRectangle.swift */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		28EFA5AE29BA53E200526491 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28EFA5AF29BA53EC00526491 /* RectangleCoordinates.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,11 +274,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28EFA5AD29BA358D00526491 /* DataStoreError.swift in Sources */,
+				28EFA5A829BA332300526491 /* SaveRectangleViewModel.swift in Sources */,
 				28EFA57F29B9E62600526491 /* SiberSystemsApp.swift in Sources */,
+				28EFA5A629BA331900526491 /* SaveRectangleView.swift in Sources */,
 				28EFA59F29BA078A00526491 /* VMRectangle.swift in Sources */,
+				28EFA5AA29BA344F00526491 /* FeatureState.swift in Sources */,
+				28EFA5A229BA32FA00526491 /* AddRectangleFactory.swift in Sources */,
 				28EFA59D29BA031C00526491 /* DataStore.swift in Sources */,
 				28EFA59129B9F68F00526491 /* RectanglesFactory.swift in Sources */,
 				28EFA59329B9F69E00526491 /* RectanglesViewModel.swift in Sources */,
+				28EFA5B029BA53EC00526491 /* RectangleCoordinates.swift in Sources */,
 				28EFA59529B9F6A800526491 /* RectanglesView.swift in Sources */,
 				28EFA59A29B9FF3D00526491 /* RectangleView.swift in Sources */,
 			);

@@ -11,8 +11,7 @@ import Foundation
 protocol DataStoring {
     var rectangles: [VMRectangle] { get }
     
-    func addRectangle(_ rectangle: VMRectangle)
-    func updateRectangle(_ rectangle: VMRectangle)
+    func saveRectangle(_ rectangle: VMRectangle) throws
     func removeRectangle(_ rectangleID: UUID)
 }
 
@@ -30,18 +29,18 @@ final class DataStore: DataStoring {
     private init() {}
     
     // MARK: - Functions
-
-    func addRectangle(_ rectangle: VMRectangle) {
-        guard isRectangleValid(rectangle) else { return }
-        rectangles.append(rectangle)
-    }
-
-    func updateRectangle(_ rectangle: VMRectangle) {
-        guard
-            let index = rectangles.firstIndex(where: { $0.id == rectangle.id } ),
-            isRectangleValid(rectangle) else { return }
-        rectangles[index].origin = rectangle.origin
-        rectangles[index].offset = rectangle.offset
+    
+    func saveRectangle(_ rectangle: VMRectangle) throws {
+        try checkRectangle(rectangle) {
+            if let index = rectangles.firstIndex(where: { $0.id == rectangle.id } ) {
+                rectangles[index].origin = rectangle.origin
+                rectangles[index].offset = rectangle.offset
+            } else {
+                rectangles.append(rectangle)
+            }
+        } error: { uuid in
+            throw DataStoreError.intersection(rectangleID: uuid)
+        }
     }
 
     func removeRectangle(_ rectangleID: UUID) {
@@ -49,18 +48,16 @@ final class DataStore: DataStoring {
     }
 
     // MARK: - Private functions
-
-    private func isRectangleValid(_ rectangle: VMRectangle) -> Bool {
-        var isValid = true
-        rectangles.forEach { addedRectangle in
+    
+    private func checkRectangle(_ rectangle: VMRectangle, success: ()->(), error: (UUID) throws -> ()) throws {
+        try rectangles.forEach { addedRectangle in
             if addedRectangle.id != rectangle.id,
                addedRectangle.frame.intersects(rectangle.frame) {
-                isValid = false
-                return
+                
+                try error(addedRectangle.id)
             }
         }
-
-        return isValid
+        success()
     }
 }
 
@@ -69,15 +66,13 @@ extension DataStore {
         class Empty: DataStoring {
             var rectangles: [VMRectangle] = []
             
-            func addRectangle(_ rectangle: VMRectangle) { }
-            func updateRectangle(_ rectangle: VMRectangle) { }
+            func saveRectangle(_ rectangle: VMRectangle) { }
             func removeRectangle(_ rectangleID: UUID) { }
         }
         class Full: DataStoring {
             var rectangles: [VMRectangle] = [VMRectangle.Stub.rectangle1, VMRectangle.Stub.rectangle2]
             
-            func addRectangle(_ rectangle: VMRectangle) { }
-            func updateRectangle(_ rectangle: VMRectangle) { }
+            func saveRectangle(_ rectangle: VMRectangle) { }
             func removeRectangle(_ rectangleID: UUID) { }
         }
     }

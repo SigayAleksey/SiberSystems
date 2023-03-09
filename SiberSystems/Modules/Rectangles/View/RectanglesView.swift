@@ -16,15 +16,22 @@ struct RectanglesView<ViewModel: RectanglesViewModelProtocol>: View {
     // MARK: - View body
     
     var body: some View {
-        Form {
-            ForEach(viewModel.rectangles) { rectangle in
-                Section {
-                    RectangleView(rectangle: rectangle)
+        NavigationView {
+            Form {
+                Section { EmptyView() }
+                ForEach(viewModel.rectangles) { rectangle in
+                    Section {
+                        RectangleView(rectangle: rectangle)
+                    }
+                }
+                NavigationLink("Add rectangle") {
+                    SaveRectangleFactory.create(context: nil)
                 }
             }
-            Button("Add rectangle") {
-                
+            .onAppear(){
+                viewModel.refteshData()
             }
+            .navigationTitle("Rectangles")
         }
     }
 }

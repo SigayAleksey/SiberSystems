@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import Combine
 
 @MainActor
 protocol RectanglesViewModelProtocol: ObservableObject {
     var rectangles: [VMRectangle] { get }
-    func getRectangles()
+    func refteshData()
 }
 
 @MainActor
@@ -22,22 +23,30 @@ final class RectanglesViewModel: RectanglesViewModelProtocol {
     
     // MARK: - Private properties
     
-    private var dataStore: DataStoring
+    private let dataStore: DataStoring
+    
+    private var rectanglesSubscription: AnyCancellable?
     
     // MARK: - Init
     
     init(dataStore: DataStoring) {
         self.dataStore = dataStore
-    }
-    
-    // MARK: - Functions
-    
-    func getRectangles() {
-        rectangles = dataStore.rectangles
-    }
-    
-    func editRectangle(_ rectangleID: UUID) {
         
+        setupSubscriptions()
+    }
+    
+    // MARK: - Private functions
+    
+    private func setupSubscriptions() {
+        rectanglesSubscription = dataStore.rectangles.publisher
+            .collect()
+            .sink(receiveValue: { rectangles in
+                self.rectangles = rectangles
+            })
+    }
+    
+    func refteshData() {
+        rectangles = dataStore.rectangles
     }
 }
 
@@ -45,11 +54,11 @@ extension RectanglesViewModel {
     struct Stub {
         class Empty: RectanglesViewModelProtocol {
             var rectangles: [VMRectangle] = []
-            func getRectangles() { }
+            func refteshData() { }
         }
         class Full: RectanglesViewModelProtocol {
             var rectangles: [VMRectangle] = [VMRectangle.Stub.rectangle1, VMRectangle.Stub.rectangle2]
-            func getRectangles() { }
+            func refteshData() { }
         }
     }
 }
