@@ -12,7 +12,6 @@ struct VMRectangle: Identifiable {
     var origin: CGPoint
     var offset: CGPoint
     
-    let colorHUE = Double.random(in: 0.1...0.99)
     var frame: CGRect {
         CGRect(
             origin: origin,

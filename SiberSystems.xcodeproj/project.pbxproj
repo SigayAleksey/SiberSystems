@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		287E4F7629BB632900A56665 /* RectanglesMapFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E4F7529BB632900A56665 /* RectanglesMapFactory.swift */; };
+		287E4F7A29BB636E00A56665 /* RectanglesMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E4F7929BB636E00A56665 /* RectanglesMapView.swift */; };
+		287E4F7C29BB637900A56665 /* RectanglesMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E4F7B29BB637900A56665 /* RectanglesMapViewModel.swift */; };
+		287E4F7F29BB648A00A56665 /* RectangleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E4F7E29BB648A00A56665 /* RectangleImage.swift */; };
+		287E4F8129BB6BCF00A56665 /* CoordinatesMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E4F8029BB6BCF00A56665 /* CoordinatesMapper.swift */; };
+		287E4F8329BB990300A56665 /* RectanglesMapContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E4F8229BB990300A56665 /* RectanglesMapContentView.swift */; };
+		287E4F8A29BCEB7700A56665 /* PerimeterBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E4F8929BCEB7700A56665 /* PerimeterBorder.swift */; };
 		28EFA57F29B9E62600526491 /* SiberSystemsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFA57E29B9E62600526491 /* SiberSystemsApp.swift */; };
 		28EFA58329B9E62700526491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EFA58229B9E62700526491 /* Assets.xcassets */; };
 		28EFA58629B9E62700526491 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EFA58529B9E62700526491 /* Preview Assets.xcassets */; };
@@ -25,6 +32,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		287E4F7529BB632900A56665 /* RectanglesMapFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglesMapFactory.swift; sourceTree = "<group>"; };
+		287E4F7929BB636E00A56665 /* RectanglesMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglesMapView.swift; sourceTree = "<group>"; };
+		287E4F7B29BB637900A56665 /* RectanglesMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglesMapViewModel.swift; sourceTree = "<group>"; };
+		287E4F7E29BB648A00A56665 /* RectangleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleImage.swift; sourceTree = "<group>"; };
+		287E4F8029BB6BCF00A56665 /* CoordinatesMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesMapper.swift; sourceTree = "<group>"; };
+		287E4F8229BB990300A56665 /* RectanglesMapContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglesMapContentView.swift; sourceTree = "<group>"; };
+		287E4F8929BCEB7700A56665 /* PerimeterBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerimeterBorder.swift; sourceTree = "<group>"; };
 		28EFA57B29B9E62600526491 /* SiberSystems.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiberSystems.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28EFA57E29B9E62600526491 /* SiberSystemsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiberSystemsApp.swift; sourceTree = "<group>"; };
 		28EFA58229B9E62700526491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,6 +68,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		287E4F7429BB630F00A56665 /* RectanglesMap */ = {
+			isa = PBXGroup;
+			children = (
+				287E4F7529BB632900A56665 /* RectanglesMapFactory.swift */,
+				287E4F7D29BB647C00A56665 /* Model */,
+				287E4F7729BB632C00A56665 /* View */,
+				287E4F7829BB633300A56665 /* ViewModel */,
+			);
+			path = RectanglesMap;
+			sourceTree = "<group>";
+		};
+		287E4F7729BB632C00A56665 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				287E4F7929BB636E00A56665 /* RectanglesMapView.swift */,
+				287E4F8229BB990300A56665 /* RectanglesMapContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		287E4F7829BB633300A56665 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				287E4F7B29BB637900A56665 /* RectanglesMapViewModel.swift */,
+				287E4F8029BB6BCF00A56665 /* CoordinatesMapper.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		287E4F7D29BB647C00A56665 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				287E4F7E29BB648A00A56665 /* RectangleImage.swift */,
+				287E4F8929BCEB7700A56665 /* PerimeterBorder.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		28EFA57229B9E62500526491 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +144,7 @@
 		28EFA58C29B9E64700526491 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				287E4F7429BB630F00A56665 /* RectanglesMap */,
 				28EFA5A029BA32CB00526491 /* SaveRectangle */,
 				28EFA58F29B9F67800526491 /* Rectangles */,
 			);
@@ -119,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				28EFA59029B9F68F00526491 /* RectanglesFactory.swift */,
-				28EFA59729B9FEED00526491 /* Model */,
 				28EFA59629B9FEE500526491 /* View */,
 				28EFA59829B9FEF200526491 /* ViewModel */,
 			);
@@ -133,13 +185,6 @@
 				28EFA59929B9FF3D00526491 /* RectangleView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		28EFA59729B9FEED00526491 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		28EFA59829B9FEF200526491 /* ViewModel */ = {
@@ -275,16 +320,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				28EFA5AD29BA358D00526491 /* DataStoreError.swift in Sources */,
+				287E4F7A29BB636E00A56665 /* RectanglesMapView.swift in Sources */,
 				28EFA5A829BA332300526491 /* SaveRectangleViewModel.swift in Sources */,
 				28EFA57F29B9E62600526491 /* SiberSystemsApp.swift in Sources */,
 				28EFA5A629BA331900526491 /* SaveRectangleView.swift in Sources */,
 				28EFA59F29BA078A00526491 /* VMRectangle.swift in Sources */,
 				28EFA5AA29BA344F00526491 /* FeatureState.swift in Sources */,
+				287E4F8A29BCEB7700A56665 /* PerimeterBorder.swift in Sources */,
 				28EFA5A229BA32FA00526491 /* AddRectangleFactory.swift in Sources */,
+				287E4F8129BB6BCF00A56665 /* CoordinatesMapper.swift in Sources */,
 				28EFA59D29BA031C00526491 /* DataStore.swift in Sources */,
+				287E4F7F29BB648A00A56665 /* RectangleImage.swift in Sources */,
+				287E4F7C29BB637900A56665 /* RectanglesMapViewModel.swift in Sources */,
 				28EFA59129B9F68F00526491 /* RectanglesFactory.swift in Sources */,
+				287E4F7629BB632900A56665 /* RectanglesMapFactory.swift in Sources */,
 				28EFA59329B9F69E00526491 /* RectanglesViewModel.swift in Sources */,
 				28EFA5B029BA53EC00526491 /* RectangleCoordinates.swift in Sources */,
+				287E4F8329BB990300A56665 /* RectanglesMapContentView.swift in Sources */,
 				28EFA59529B9F6A800526491 /* RectanglesView.swift in Sources */,
 				28EFA59A29B9FF3D00526491 /* RectangleView.swift in Sources */,
 			);
