@@ -12,6 +12,7 @@ protocol SaveRectangleViewModelProtocol: ObservableObject {
     var state: FeatureState { get }
     var existingRectangle: VMRectangle? { get }
     func saveRectangle(with coordinates: RectangleCoordinates)
+    func removeRectangle(_ rectangleID: UUID)
 }
 
 @MainActor
@@ -69,6 +70,10 @@ final class SaveRectangleViewModel: SaveRectangleViewModelProtocol {
             state = .alert("Unknown error")
         }
     }
+    
+    func removeRectangle(_ rectangleID: UUID) {
+        dataStore.removeRectangle(rectangleID)
+    }
 }
 
 extension SaveRectangleViewModel {
@@ -77,11 +82,13 @@ extension SaveRectangleViewModel {
             var state: FeatureState = .none
             var existingRectangle: VMRectangle? = nil
             func saveRectangle(with: RectangleCoordinates) { }
+            func removeRectangle(_ rectangleID: UUID) { }
         }
         class Edit: SaveRectangleViewModelProtocol {
             var state: FeatureState = .none
             var existingRectangle: VMRectangle? = VMRectangle.Stub.rectangle1
             func saveRectangle(with: RectangleCoordinates) { }
+            func removeRectangle(_ rectangleID: UUID) { }
         }
     }
 }
