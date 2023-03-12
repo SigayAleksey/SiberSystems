@@ -28,26 +28,38 @@ struct SaveRectangleView<ViewModel: SaveRectangleViewModelProtocol>: View {
         case .none:
             Form {
                 Section { EmptyView() }
-                VStack(spacing: 12) {
-                    Group {
-                        TextField("Origin X", value: $originX, format: .number)
-                        TextField("Origin Y", value: $originY, format: .number)
-                        TextField("Offset X", value: $offsetX, format: .number)
-                        TextField("Offset Y", value: $offsetY, format: .number)
+                VStack(spacing: 24) {
+                    VStack(spacing: 12) {
+                        Group {
+                            TextField("Origin X", value: $originX, format: .number)
+                            TextField("Origin Y", value: $originY, format: .number)
+                            TextField("Offset X", value: $offsetX, format: .number)
+                            TextField("Offset Y", value: $offsetY, format: .number)
+                        }
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .keyboardType(UIKeyboardType.numberPad)
                     }
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .keyboardType(UIKeyboardType.numberPad)
                     
-                    Button(viewModel.existingRectangle == nil ? "Create" : "Save") {
-                        viewModel.saveRectangle(
-                            with: RectangleCoordinates(
-                                originX: originX,
-                                originY: originY,
-                                offsetX: offsetX,
-                                offsetY: offsetY
+                    HStack(spacing: 56){
+                        if let existingRectangle = viewModel.existingRectangle {
+                            Button("Remove", role: .destructive) {
+                                viewModel.removeRectangle(existingRectangle.id)
+                                dismiss()
+                            }
+                        }
+                        
+                        Button(viewModel.existingRectangle == nil ? "Create" : "Save") {
+                            viewModel.saveRectangle(
+                                with: RectangleCoordinates(
+                                    originX: originX,
+                                    originY: originY,
+                                    offsetX: offsetX,
+                                    offsetY: offsetY
+                                )
                             )
-                        )
+                        }
                     }
+                    .buttonStyle(BorderlessButtonStyle())
                 }
                 .navigationTitle(
                     viewModel.existingRectangle == nil ? "Create Rectangle" : "Edit Rectangle"
