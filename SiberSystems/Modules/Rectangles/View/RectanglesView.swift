@@ -27,6 +27,11 @@ struct RectanglesView<ViewModel: RectanglesViewModelProtocol>: View {
                 NavigationLink("Add rectangle") {
                     SaveRectangleFactory.create(context: nil)
                 }
+                Section {
+                    NavigationLink("Display the rectangles map") {
+                        RectanglesMapFactory.create()
+                    }
+                }
             }
             .onAppear(){
                 viewModel.refteshData()
