@@ -11,7 +11,7 @@ import SwiftUI
 struct SiberSystemsApp: App {
     var body: some Scene {
         WindowGroup {
-            EmptyView()
+            RectanglesFactory.create()
         }
     }
 }
